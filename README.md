@@ -151,6 +151,13 @@ Hàm **`pd.read_html()`** trong thư viện **Pandas** cho phép bạn tự đ�
 | **`index_col`** | Chọn cột làm chỉ số (Index) cho DataFrame. |
 | **`flavor`** | Động cơ phân tích HTML (mặc định dùng `lxml` hoặc `bs4`). |
 
+### 3. Lưu ý:
+Kết quả trả về luôn là List: Đừng quên pd.read_html() luôn trả về danh sách các bảng. Bạn cần dùng chỉ số index như tables[0], tables[1] để truy cập từng bảng cụ thể.
+
+Không cào được web có JavaScript động: read_html chỉ đọc được mã HTML tĩnh gửi về từ server. Nếu bảng dữ liệu được tạo ra bằng JavaScript (React, Vue, AJAX...), bạn nên dùng Selenium hoặc Playwright để tải trang trước khi dùng read_html.
+
+Tránh bị chặn IP: Nếu gặp lỗi HTTP Error 403: Forbidden, bạn cần kết hợp thêm thư viện requests để giả lập trình duyệt (thêm Headers):
+
 ---
 
 ## 🛠️ Yêu cầu cài đặt (Prerequisites)
@@ -159,4 +166,33 @@ Hàm **`pd.read_html()`** trong thư viện **Pandas** cho phép bạn tự đ�
 
 ```bash
 pip install pandas lxml html5lib bs4
+
+import pandas as pd
+
+# 1. Đường dẫn trang Wikipedia về mùa giải Ngoại hạng Anh
+url = "https://en.wikipedia.org/wiki/2023%E2%80%9324_Premier_League"
+
+# 2. Dùng pandas đọc bảng có chứa chữ "Tottenham" hoặc "Arsenal" để lọc đúng bảng xếp hạng
+tables = pd.read_html(url, match="Arsenal")
+
+# 3. Lấy bảng xếp hạng
+df_bxh = tables[0]
+
+# 4. Hiển thị 5 đội dẫn đầu
+print("🏆 TOP 5 ĐỘI DẪN ĐẦU BẢNG XẾP HẠNG:")
+print(df_bxh.head())
+
+# 5. Lọc ra các cột quan trọng (Vị trí, Đội bóng, Số trận, Thắng, Hòa, Thua, Điểm)
+# Dùng iloc để chọn cột theo thứ tự index
+df_sach = df_bxh.iloc[:, [0, 1, 2, 3, 4, 5, 9]] 
+
+# Đổi tên cột sang tiếng Việt cho dễ đọc
+df_sach.columns = ["Hạng", "Đội bóng", "ST", "Thắng", "Hòa", "Thua", "Điểm"]
+
+print("\n📊 BẢNG XẾP HẠNG ĐÃ ĐƯỢC LÀM SẠCH:")
+print(df_sach.head(10))
+
+# 6. Lưu kết quả ra file Excel hoặc CSV
+df_sach.to_csv("bxh_ngoai_hang_anh.csv", index=False, encoding="utf-8-sig")
+print("\n🎉 Đã xuất thành công file 'bxh_ngoai_hang_anh.csv'!")
 
