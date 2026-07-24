@@ -214,13 +214,19 @@ print("\n🎉 Đã xuất thành công file 'bxh_ngoai_hang_anh.csv'!")
 
 Hướng dẫn chi tiết về cách gửi **GET Request (với URL Parameters)** và **POST Request (với Data Body)** bằng thư viện `requests` trong Python, sử dụng dịch vụ thử nghiệm `httpbin.org`.
 
+| Tiêu chí | HTTP GET | HTTP POST |
+| :--- | :--- | :--- |
+| **Vị trí chứa dữ liệu** | Đính trực tiếp trên **URL** dưới dạng Query String (`?key=value`). | Đóng gói bên trong **Request Body** (Ẩn khỏi thanh địa chỉ). |
+| **Cấu trúc URL (`r.url`)** | Thay đổi theo dữ liệu gửi đi (Ví dụ: `http://example.com/api?id=123`). | Giữ nguyên đường dẫn gốc (Ví dụ: `http://example.com/api`). |
+| **Thân yêu cầu (`r.request.body`)** | **`None`** (Không sử dụng body để truyền dữ liệu). | Chứa chuỗi dữ liệu gửi đi (Ví dụ: `id=123` hoặc chuỗi JSON). |
+| **Giới hạn dung lượng** | Bị giới hạn bởi độ dài tối đa của URL (~2.048 ký tự). | **Không giới hạn** dung lượng truyền trong body. |
 ---
 
 ## 🔍 1. GET Request với URL Parameters (Query String)
 
 Phương thức **GET** thường dùng để truy vấn hoặc lấy dữ liệu từ Server/API. Chúng ta có thể truyền tham số qua URL bằng một chuỗi **Query String** (bắt đầu bằng dấu `?`, các cặp `key=value` nối nhau bằng dấu `&`).
 
-### 📜 Mã nguồn thực hành:
+### 📜 GET - Mã nguồn thực hành:
 
 ```python
 import requests
@@ -254,6 +260,10 @@ data = r.json()
 # Lấy các tham số đã gửi từ key 'args'
 print("Dữ liệu args nhận được từ Server:", data["args"])
 # Output: {'ID': '123', 'name': 'Joseph'}
+```
+## 📤 2. POST Request với Data Body (Form Data)
+
+Phương thức **POST** thường dùng để gửi dữ liệu lên Server/API nhằm tạo mới, cập nhật dữ liệu hoặc thực hiện các tác vụ như đăng nhập, gửi biểu mẫu (Form). Khác với GET, dữ liệu gửi đi không nằm trên URL mà được đóng gói an toàn bên trong **Request Body** dưới dạng các cặp `key-value`.
 
 ```python
 import requests
