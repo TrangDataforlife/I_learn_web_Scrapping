@@ -209,3 +209,73 @@ print(df_sach.head(10))
 df_sach.to_csv("bxh_ngoai_hang_anh.csv", index=False, encoding="utf-8-sig")
 print("\n🎉 Đã xuất thành công file 'bxh_ngoai_hang_anh.csv'!")
 
+```
+# 🌐 Xử Lý HTTP Requests Trong Python: GET vs POST
+
+Hướng dẫn chi tiết về cách gửi **GET Request (với URL Parameters)** và **POST Request (với Data Body)** bằng thư viện `requests` trong Python, sử dụng dịch vụ thử nghiệm `httpbin.org`.
+
+---
+
+## 🔍 1. GET Request với URL Parameters (Query String)
+
+Phương thức **GET** thường dùng để truy vấn hoặc lấy dữ liệu từ Server/API. Chúng ta có thể truyền tham số qua URL bằng một chuỗi **Query String** (bắt đầu bằng dấu `?`, các cặp `key=value` nối nhau bằng dấu `&`).
+
+### 📜 Mã nguồn thực hành:
+
+```python
+import requests
+
+# 1. Khai báo URL gốc (Endpoint)
+url_get = "[http://httpbin.org/get](http://httpbin.org/get)"
+
+# 2. Tạo dictionary chứa các tham số (Query parameters)
+payload = {"name": "Joseph", "ID": "123"}
+
+# 3. Gửi GET Request truyền dictionary vào tham số `params`
+r = requests.get(url_get, params=payload)
+
+# 4. Kiểm tra URL thực tế được tạo ra
+print("URL hoàn chỉnh:", r.url)
+# Output: [http://httpbin.org/get?name=Joseph&ID=123](http://httpbin.org/get?name=Joseph&ID=123)
+
+# 5. Kiểm tra Request Body (GET không có body)
+print("Request body:", r.request.body)
+# Output: None
+
+# 6. Kiểm tra Mã trạng thái (Status Code)
+print("Status code:", r.status_code)
+
+# 7. Kiểm tra Định dạng dữ liệu trả về (Content-Type)
+print("Content-Type:", r.headers["Content-Type"])
+
+# 8. Giải mã dữ liệu JSON trả về thành Python Dictionary
+data = r.json()
+
+# Lấy các tham số đã gửi từ key 'args'
+print("Dữ liệu args nhận được từ Server:", data["args"])
+# Output: {'ID': '123', 'name': 'Joseph'}
+
+```python
+import requests
+
+# 1. Khai báo URL Endpoint cho POST
+url_post = "[http://httpbin.org/post](http://httpbin.org/post)"
+
+# 2. Dữ liệu cần gửi
+payload = {"name": "Joseph", "ID": "123"}
+
+# 3. Gửi POST Request truyền dictionary vào tham số `data`
+r_post = requests.post(url_post, data=payload)
+
+# 4. Kiểm tra URL (URL giữ nguyên, không chứa query string)
+print("POST request URL:", r_post.url)
+# Output: [http://httpbin.org/post](http://httpbin.org/post)
+
+# 5. Kiểm tra Request Body (Dữ liệu nằm ở đây)
+print("POST request body:", r_post.request.body)
+# Output: name=Joseph&ID=123
+
+# 6. Kiểm tra dữ liệu Form được Server nhận diện
+print("Form data nhận được:", r_post.json()["form"])
+# Output: {'ID': '123', 'name': 'Joseph'}
+
