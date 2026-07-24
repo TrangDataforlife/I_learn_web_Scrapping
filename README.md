@@ -125,6 +125,9 @@ for link in links:
     # Chỉ in ra nếu thẻ link đó có chứa văn bản (tránh in ra các dòng trống)
     if text:
         print(text)
+```
+-------
+# 🐍 Hướng Dẫn Cào Dữ Liệu Web Cơ Bản Với Python
 
 # 📊 Trích Xuất Dữ Liệu Bảng (Table) Trên Web Bằng `pandas.read_html`
 
