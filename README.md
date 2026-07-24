@@ -74,6 +74,9 @@ Thu thập dữ liệu do người dùng nhập (đăng nhập, đăng ký, tìm
 * `<button>`: Nút bấm (dùng để gửi form hoặc kích hoạt sự kiện JavaScript).
 * `<select>` & `<option>`: Tạo danh sách lựa chọn thả xuống (Dropdown menu).
 
+> 💡 **Thẻ bọc chung (Generic Container):**  
+> Ngoài các nhóm trên, không thể không nhắc tới `<div>` — đây là thẻ khối (Block-level) phổ biến nhất dùng làm hộp chứa để gom nhóm các phần tử và dựng bố cục trang bằng CSS/JS.
+
 ---
 # 🐍 Hướng Dẫn Cào Dữ Liệu Web Cơ Bản Với Python
 
@@ -109,7 +112,7 @@ print("--- 500 KÝ TỰ HTML ĐẦU TIÊN ---")
 print(html_content[:500])
 print("\n" + "=" * 50 + "\n")
 
-# 7. Tìm tất cả các thẻ <a> (thẻ chứa đường dẫn/link) trong trang web
+# 7. CUSTOM DATA EXTRACTION Tìm tất cả các thẻ <a> (thẻ chứa đường dẫn/link) trong trang web
 links = soup.find_all("a")
 
 # 8. Duyệt qua từng thẻ <a> tìm được và in ra văn bản hiển thị (text) của link đó
@@ -123,5 +126,35 @@ for link in links:
     if text:
         print(text)
 
-> 💡 **Thẻ bọc chung (Generic Container):**  
-> Ngoài các nhóm trên, không thể không nhắc tới `<div>` — đây là thẻ khối (Block-level) phổ biến nhất dùng làm hộp chứa để gom nhóm các phần tử và dựng bố cục trang bằng CSS/JS.
+# 📊 Trích Xuất Dữ Liệu Bảng (Table) Trên Web Bằng `pandas.read_html`
+
+## 💡 Tổng quan & Tính ứng dụng
+
+Hàm **`pd.read_html()`** trong thư viện **Pandas** cho phép bạn tự động cào (scrape) tất cả các bảng dữ liệu (`<table>`) từ một trang web và chuyển đổi chúng thành các **DataFrame**. 
+
+> **Hình dung thực tế:** Nó giống như việc bạn copy một bảng dữ liệu từ trang web rồi dán trực tiếp vào **Excel / Google Sheets** chỉ bằng 1 dòng lệnh Python, sẵn sàng cho việc phân tích dữ liệu ngay lập tức!
+
+---
+
+## 🔑 Kiến thức & Hàm cốt lõi (Core Functions)
+
+### 1. Hàm chính: `pd.read_html()`
+* **`pd.read_html(url_hoac_html)`**: Đọc file HTML hoặc đường dẫn URL, tự động tìm các thẻ `<table>` và trả về **một danh sách các DataFrames** (`List[DataFrame]`).
+
+### 2. Các tham số thực hành quan trọng (Parameters):
+| Tham số | Ý nghĩa & Cách dùng thực tế |
+| :--- | :--- |
+| **`match`** | Lọc bảng cần lấy dựa trên chữ/chuỗi có chứa trong bảng đó (VD: `match="Doanh thu"`). |
+| **`header`** | Chỉ định dòng nào trong bảng làm tiêu đề cột (thường là `header=0`). |
+| **`index_col`** | Chọn cột làm chỉ số (Index) cho DataFrame. |
+| **`flavor`** | Động cơ phân tích HTML (mặc định dùng `lxml` hoặc `bs4`). |
+
+---
+
+## 🛠️ Yêu cầu cài đặt (Prerequisites)
+
+Để `read_html` hoạt động tốt, bạn cần cài đặt `pandas` cùng với thư viện hỗ trợ đọc HTML (`lxml` hoặc `html5lib` + `BeautifulSoup4`):
+
+```bash
+pip install pandas lxml html5lib bs4
+
