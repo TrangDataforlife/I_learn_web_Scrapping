@@ -101,7 +101,7 @@ response = requests.get(url)
 # 4. Lấy nội dung mã nguồn HTML thô (Raw HTML) từ phản hồi
 html_content = response.text
 
-# 5. Tạo một đối tượng BeautifulSoup để phân tích (parse) cú pháp HTML
+# 5. Tạo một đối tượng BeautifulSoup để phân tích (parse) cú pháp HTML as a tree-like structure.
 soup = BeautifulSoup(html_content, "html.parser")
 
 # 6. In ra 500 ký tự đầu tiên của mã HTML để kiểm tra dữ liệu thô
