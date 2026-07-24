@@ -95,11 +95,24 @@ pip install requests bs4
 import requests
 from bs4 import BeautifulSoup
 
-# 2. Khai báo URL của trang web bạn muốn cào dữ liệu
+# 2. Khai báo URL của trang web bạn muốn cào dữ liệu text/ image
 url = "[https://en.wikipedia.org/wiki/IBM](https://en.wikipedia.org/wiki/IBM)"
 
 # 3. Gửi một yêu cầu HTTP GET đến trang web để lấy dữ liệu về
 response = requests.get(url)
+#3.1. Kiểm tra trạng thái của yêu cầu
+response.status_code
+#3.2. Xem request headers
+print(response.request.headers)
+print(response.headers) #This returns a python dictionary of HTTP response headers.
+#3.3. Xem request body
+print(response.request.body)
+#3.4. Xem request date
+header['Date']
+#3.5. Xem request content-type
+header['Content-Type']
+#3.6. Kiểm tra request encoding
+response.encoding
 
 # 4. Lấy nội dung mã nguồn HTML thô (Raw HTML) từ phản hồi
 html_content = response.text
