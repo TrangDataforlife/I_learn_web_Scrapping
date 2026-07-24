@@ -75,6 +75,53 @@ Thu thập dữ liệu do người dùng nhập (đăng nhập, đăng ký, tìm
 * `<select>` & `<option>`: Tạo danh sách lựa chọn thả xuống (Dropdown menu).
 
 ---
+# 🐍 Hướng Dẫn Cào Dữ Liệu Web Cơ Bản Với Python
+
+Đoạn mã này hướng dẫn cách tải nội dung một trang web và trích xuất tất cả các đường liên kết (links) bằng hai thư viện phổ biến: **`requests`** và **`BeautifulSoup`**.
+
+---
+
+## 🛠️ Yêu cầu tiền đề (Prerequisites)
+
+Trước khi chạy code, bạn cần cài đặt 2 thư viện này bằng lệnh Terminal / Command Prompt:
+
+```bash
+pip install requests bs4
+
+# 1. Nhập (import) các thư viện cần thiết
+import requests
+from bs4 import BeautifulSoup
+
+# 2. Khai báo URL của trang web bạn muốn cào dữ liệu
+url = "[https://en.wikipedia.org/wiki/IBM](https://en.wikipedia.org/wiki/IBM)"
+
+# 3. Gửi một yêu cầu HTTP GET đến trang web để lấy dữ liệu về
+response = requests.get(url)
+
+# 4. Lấy nội dung mã nguồn HTML thô (Raw HTML) từ phản hồi
+html_content = response.text
+
+# 5. Tạo một đối tượng BeautifulSoup để phân tích (parse) cú pháp HTML
+soup = BeautifulSoup(html_content, "html.parser")
+
+# 6. In ra 500 ký tự đầu tiên của mã HTML để kiểm tra dữ liệu thô
+print("--- 500 KÝ TỰ HTML ĐẦU TIÊN ---")
+print(html_content[:500])
+print("\n" + "=" * 50 + "\n")
+
+# 7. Tìm tất cả các thẻ <a> (thẻ chứa đường dẫn/link) trong trang web
+links = soup.find_all("a")
+
+# 8. Duyệt qua từng thẻ <a> tìm được và in ra văn bản hiển thị (text) của link đó
+print("--- DANH SÁCH VĂN BẢN TRONG CÁC THẺ LINK ---")
+for link in links:
+    # .strip() giúp loại bỏ các khoảng trắng thừa hoặc dòng trống
+    # link.text : Chỉ lấy phần chữ hiển thị người dùng nhìn thấy trên màn hình, loại bỏ toàn bộ các thẻ tag HTML xung quanh.
+    text = link.text.strip()
+
+    # Chỉ in ra nếu thẻ link đó có chứa văn bản (tránh in ra các dòng trống)
+    if text:
+        print(text)
 
 > 💡 **Thẻ bọc chung (Generic Container):**  
 > Ngoài các nhóm trên, không thể không nhắc tới `<div>` — đây là thẻ khối (Block-level) phổ biến nhất dùng làm hộp chứa để gom nhóm các phần tử và dựng bố cục trang bằng CSS/JS.
