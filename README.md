@@ -127,7 +127,6 @@ for link in links:
         print(text)
 ```
 -------
-# 🐍 Hướng Dẫn Cào Dữ Liệu Web Cơ Bản Với Python
 
 # 📊 Trích Xuất Dữ Liệu Bảng (Table) Trên Web Bằng `pandas.read_html`
 
