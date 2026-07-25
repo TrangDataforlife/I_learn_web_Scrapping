@@ -1,6 +1,8 @@
 # I_learn_api
 
-HTML display
+## HTML display
+
+```html
 <!DOCTYPE html>
 <html lang="vi">
   <head>
@@ -13,7 +15,9 @@ HTML display
     <p>Đây là một đoạn văn.</p>
   </body>
 </html>
+```
 
+```text
 <!DOCTYPE html>              ← Khai báo chuẩn HTML5
 <html>                       ← Gốc của toàn bộ trang
  ├── <head>                  ← Thông tin "hậu trường" (không hiển thị)
@@ -27,6 +31,7 @@ HTML display
        │     ├── <h1>, <p>   ← Nội dung chính
        │     └── <img>, <a>
        └── <footer>          ← Phần chân trang
+```
 
 ## 1. Thẻ cấu trúc cơ bản (Document Structure)
 Tạo khung xương nền tảng cho một trang HTML.
