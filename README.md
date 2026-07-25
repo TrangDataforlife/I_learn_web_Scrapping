@@ -1,5 +1,33 @@
 # I_learn_api
 
+HTML display
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiêu đề trang</title>
+  </head>
+  <body>
+    <h1>Nội dung hiển thị ở đây</h1>
+    <p>Đây là một đoạn văn.</p>
+  </body>
+</html>
+
+<!DOCTYPE html>              ← Khai báo chuẩn HTML5
+<html>                       ← Gốc của toàn bộ trang
+ ├── <head>                  ← Thông tin "hậu trường" (không hiển thị)
+ │     ├── <meta charset>
+ │     ├── <title>
+ │     └── <link>/<script>
+ │
+ └── <body>                  ← Nội dung hiển thị cho người dùng
+       ├── <header>          ← Phần đầu trang (logo, menu)
+       ├── <main>             
+       │     ├── <h1>, <p>   ← Nội dung chính
+       │     └── <img>, <a>
+       └── <footer>          ← Phần chân trang
+
 ## 1. Thẻ cấu trúc cơ bản (Document Structure)
 Tạo khung xương nền tảng cho một trang HTML.
 
