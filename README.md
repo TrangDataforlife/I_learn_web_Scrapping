@@ -24,7 +24,16 @@
 - [5. Xử lý HTTP Requests: GET vs POST](#5-xử-lý-http-requests-get-vs-post)
   - [5.1. GET Request với URL Parameters](#51-get-request-với-url-parameters)
   - [5.2. POST Request với Data Body](#52-post-request-với-data-body)
+- [6. Danh sách HTML Attributes](#6-danh-sach-html-attributes)
+-   [1. Global Attributes (dùng được cho mọi thẻ)](#1-global-attributes-dùng-được-cho-mọi-thẻ)
+-   [2. Attributes cho Form & Input](#2-attributes-cho-form--input)
+-   [3. Attributes cho Link & Media](#3-attributes-cho-link--media)
+-   [4. Attributes cho Table](#4-attributes-cho-table)
+-   [5. Attributes cho Iframe & Script](#5-attributes-cho-iframe--script)
+-   [6. Event Handler Attributes (on*)](#6-event-handler-attributes-on)
+-   [7. Attributes cũ / không khuyến khích dùng (Deprecated)](#7-attributes-cũ--không-khuyến-khích-dùng-deprecated)
 
+---
 ---
 ## **Web Scraping with Python**
 
@@ -465,3 +474,163 @@ print("POST request body:", r_post.request.body)
 print("Form data nhận được:", r_post.json()["form"])
 # Output: {'ID': '123', 'name': 'Joseph'}
 ```
+# 6. Danh sách HTML Attributes
+
+## 📑 Mục lục
+
+- [1. Global Attributes (dùng được cho mọi thẻ)](#1-global-attributes-dùng-được-cho-mọi-thẻ)
+- [2. Attributes cho Form & Input](#2-attributes-cho-form--input)
+- [3. Attributes cho Link & Media](#3-attributes-cho-link--media)
+- [4. Attributes cho Table](#4-attributes-cho-table)
+- [5. Attributes cho Iframe & Script](#5-attributes-cho-iframe--script)
+- [6. Event Handler Attributes (on*)](#6-event-handler-attributes-on)
+- [7. Attributes cũ / không khuyến khích dùng (Deprecated)](#7-attributes-cũ--không-khuyến-khích-dùng-deprecated)
+
+---
+
+## 1. Global Attributes (dùng được cho mọi thẻ)
+
+Nhóm attribute có thể gắn vào **bất kỳ thẻ HTML nào**, không phân biệt loại thẻ.
+
+| Attribute | Ý nghĩa |
+|---|---|
+| `id` | Định danh duy nhất cho phần tử trong toàn trang |
+| `class` | Gán một hoặc nhiều tên lớp (class), dùng để style bằng CSS hoặc chọn bằng JS |
+| `style` | Gán CSS trực tiếp (inline style) |
+| `title` | Chú thích hiển thị dạng tooltip khi rê chuột vào |
+| `lang` | Khai báo ngôn ngữ nội dung (VD: `vi`, `en`) |
+| `dir` | Hướng văn bản: `ltr` (trái sang phải) hoặc `rtl` (phải sang trái) |
+| `tabindex` | Thứ tự focus khi nhấn phím Tab |
+| `hidden` | Ẩn phần tử khỏi trang |
+| `draggable` | Cho phép kéo-thả phần tử (`true`/`false`) |
+| `contenteditable` | Cho phép người dùng chỉnh sửa trực tiếp nội dung (`true`/`false`) |
+| `spellcheck` | Bật/tắt kiểm tra chính tả của trình duyệt |
+| `translate` | Cho phép/không cho phép công cụ dịch tự động dịch nội dung |
+| `accesskey` | Gán phím tắt để focus/kích hoạt phần tử |
+| `data-*` | Attribute tùy chỉnh để lưu dữ liệu riêng (VD: `data-user-id`) |
+| `role` | Khai báo vai trò ARIA cho hỗ trợ tiếp cận (accessibility) |
+| `aria-*` | Nhóm attribute ARIA hỗ trợ trình đọc màn hình (VD: `aria-label`, `aria-hidden`) |
+| `autocapitalize` | Điều khiển tự động viết hoa khi nhập trên thiết bị di động |
+| `autofocus` | Tự động focus vào phần tử khi trang tải xong |
+| `inert` | Vô hiệu hóa tương tác (không click/focus được) với cả cụm phần tử |
+| `is` | Khai báo custom element kế thừa từ thẻ chuẩn |
+| `itemid`, `itemprop`, `itemref`, `itemscope`, `itemtype` | Nhóm attribute hỗ trợ Microdata (structured data cho SEO) |
+| `nonce` | Mã bảo mật dùng với Content Security Policy (CSP) |
+| `part` | Đánh dấu phần tử để style từ bên ngoài Shadow DOM |
+| `slot` | Gán phần tử vào 1 "khe" (slot) trong Web Component |
+| `popover` | Khai báo phần tử là popover (HTML mới) |
+| `inputmode` | Gợi ý loại bàn phím ảo hiển thị trên di động (VD: `numeric`, `email`) |
+
+---
+
+## 2. Attributes cho Form & Input
+
+| Attribute | Ý nghĩa |
+|---|---|
+| `action` | URL nhận dữ liệu khi submit form |
+| `method` | Phương thức gửi form: `get` hoặc `post` |
+| `enctype` | Kiểu mã hóa dữ liệu khi submit (VD: `multipart/form-data` khi có upload file) |
+| `name` | Tên trường dữ liệu, dùng làm key khi gửi lên server |
+| `value` | Giá trị hiện tại của input |
+| `placeholder` | Chữ gợi ý mờ hiển thị khi ô input còn trống |
+| `required` | Bắt buộc phải nhập trước khi submit |
+| `disabled` | Vô hiệu hóa phần tử, không thể tương tác |
+| `readonly` | Chỉ đọc, không cho phép chỉnh sửa (nhưng vẫn gửi được giá trị) |
+| `checked` | Đánh dấu checkbox/radio đã được chọn sẵn |
+| `selected` | Đánh dấu option đã được chọn sẵn trong dropdown |
+| `multiple` | Cho phép chọn nhiều giá trị (input file, select) |
+| `maxlength` / `minlength` | Giới hạn số ký tự tối đa/tối thiểu được nhập |
+| `min` / `max` / `step` | Giới hạn giá trị nhỏ nhất/lớn nhất và bước nhảy (cho input number, range, date) |
+| `pattern` | Biểu thức chính quy (regex) để validate giá trị nhập |
+| `autocomplete` | Bật/tắt gợi ý tự động điền của trình duyệt |
+| `form` | Liên kết input với 1 form cụ thể theo `id`, dù input nằm ngoài thẻ `form` |
+| `formaction`, `formmethod`, `formenctype`, `formnovalidate`, `formtarget` | Ghi đè thuộc tính của `form` cha, áp dụng riêng cho 1 nút submit |
+| `list` | Liên kết input với 1 thẻ `datalist` (gợi ý nhập liệu) |
+| `novalidate` | Tắt việc kiểm tra hợp lệ (validation) mặc định của trình duyệt khi submit |
+| `accept` | Giới hạn loại file được chọn (input file), VD: `image/*` |
+| `accept-charset` | Khai báo bảng mã ký tự chấp nhận khi submit form |
+
+---
+
+## 3. Attributes cho Link & Media
+
+| Attribute | Ý nghĩa |
+|---|---|
+| `href` | Đường dẫn liên kết (dùng ở thẻ `a`, `link`) |
+| `src` | Đường dẫn nguồn tài nguyên (ảnh, video, audio, script, iframe) |
+| `alt` | Văn bản thay thế khi ảnh không tải được, hỗ trợ SEO và accessibility |
+| `target` | Nơi mở liên kết: `_blank`, `_self`, `_parent`, `_top` |
+| `rel` | Mối quan hệ giữa trang hiện tại và tài nguyên liên kết (VD: `nofollow`, `noopener`) |
+| `download` | Cho phép tải file về thay vì mở trực tiếp |
+| `hreflang` | Khai báo ngôn ngữ của trang được liên kết tới |
+| `type` | Khai báo kiểu MIME của tài nguyên |
+| `media` | Điều kiện media query áp dụng resource (VD: cho `link`, `source`) |
+| `sizes` / `srcset` | Khai báo nhiều kích thước/độ phân giải ảnh khác nhau để responsive |
+| `crossorigin` | Cấu hình chính sách CORS khi tải tài nguyên |
+| `referrerpolicy` | Quy định thông tin referrer gửi kèm khi tải tài nguyên |
+| `integrity` | Mã hash để kiểm tra tính toàn vẹn của file tải từ CDN |
+| `loading` | Chế độ tải ảnh/iframe: `lazy` (tải khi cuộn tới) hoặc `eager` |
+| `decoding` | Gợi ý cách trình duyệt giải mã ảnh: `sync`, `async`, `auto` |
+| `poster` | Ảnh đại diện hiển thị trước khi video được phát |
+| `controls` | Hiển thị thanh điều khiển cho audio/video |
+| `autoplay` | Tự động phát audio/video khi tải trang |
+| `loop` | Lặp lại audio/video liên tục |
+| `muted` | Tắt tiếng mặc định |
+| `preload` | Gợi ý cách tải trước media: `none`, `metadata`, `auto` |
+| `playsinline` | Cho phép video phát ngay trong trang trên di động, không mở toàn màn hình |
+
+---
+
+## 4. Attributes cho Table
+
+| Attribute | Ý nghĩa |
+|---|---|
+| `colspan` | Gộp 1 ô trải ngang qua nhiều cột |
+| `rowspan` | Gộp 1 ô trải dọc qua nhiều hàng |
+| `headers` | Liên kết ô dữ liệu (`td`) với ô tiêu đề (`th`) tương ứng, hỗ trợ accessibility |
+| `scope` | Khai báo phạm vi của ô tiêu đề: `row`, `col`, `rowgroup`, `colgroup` |
+
+---
+
+## 5. Attributes cho Iframe & Script
+
+| Attribute | Ý nghĩa |
+|---|---|
+| `sandbox` | Giới hạn quyền hạn của nội dung bên trong `iframe` (bảo mật) |
+| `allow` | Khai báo các quyền trình duyệt được phép dùng trong `iframe` (camera, micro...) |
+| `allowfullscreen` | Cho phép nội dung trong `iframe` mở toàn màn hình |
+| `async` | Tải script bất đồng bộ, không chặn parse HTML |
+| `defer` | Tải script song song nhưng chỉ thực thi sau khi parse HTML xong |
+| `nomodule` | Chỉ chạy script này ở trình duyệt **không** hỗ trợ ES module |
+
+---
+
+## 6. Event Handler Attributes (on*)
+
+Nhóm attribute gắn hành vi JavaScript trực tiếp vào thẻ HTML khi có sự kiện xảy ra (không khuyến khích dùng nhiều vì lẫn logic vào HTML, nhưng vẫn phổ biến trong ví dụ cơ bản).
+
+| Nhóm sự kiện | Attribute tiêu biểu |
+|---|---|
+| Chuột (Mouse) | `onclick`, `ondblclick`, `onmouseover`, `onmouseout`, `onmousedown`, `onmouseup`, `onmousemove` |
+| Bàn phím (Keyboard) | `onkeydown`, `onkeyup`, `onkeypress` |
+| Form | `onsubmit`, `onreset`, `onchange`, `oninput`, `onfocus`, `onblur`, `oninvalid` |
+| Trang / Cửa sổ (Window) | `onload`, `onunload`, `onresize`, `onscroll`, `onerror` |
+| Kéo-thả (Drag & Drop) | `ondrag`, `ondragstart`, `ondragend`, `ondrop` |
+| Media | `onplay`, `onpause`, `onended`, `onvolumechange` |
+
+---
+
+## 7. Attributes cũ / không khuyến khích dùng (Deprecated)
+
+Các attribute này vẫn có thể hoạt động ở một số trình duyệt nhưng đã bị thay thế bằng CSS — **không nên dùng** trong dự án mới.
+
+| Attribute | Đã bị thay thế bằng |
+|---|---|
+| `bgcolor` | CSS `background-color` |
+| `align` | CSS `text-align` / `float` |
+| `valign` | CSS `vertical-align` |
+| `border` (trên thẻ `table`) | CSS `border` |
+| `cellpadding`, `cellspacing` | CSS `padding`, `border-spacing` |
+| `width`, `height` (trên thẻ layout như `table`, `td`) | CSS `width`, `height` |
+
+> 🔑 **Ghi nhớ:** Nhóm **Global Attributes** (mục 1) là quan trọng nhất cần nhớ trước — vì gắn được vào mọi thẻ. Các nhóm còn lại chỉ áp dụng cho từng nhóm thẻ cụ thể (form, media, table...), nên học theo ngữ cảnh sẽ dễ nhớ hơn là học thuộc lòng toàn bộ danh sách.
