@@ -221,7 +221,14 @@ Thu thập dữ liệu do người dùng nhập (đăng nhập, đăng ký, tìm
   ```
 
 - **`Comment`** — kiểu con đặc biệt của `NavigableString`, đại diện cho comment HTML.
+(<!-- ... -->).
 
+- **`.prettify()`** show HTML structure as a tree
+  ```python
+  soup = BeautifulSoup(html, 'html5lib')
+  print(soup.prettify())
+  ```
+  
 ### 2.2. Thuộc tính quan trọng của Tag Object
 
 | Thuộc tính | Ý nghĩa |
