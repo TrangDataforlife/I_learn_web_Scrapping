@@ -474,7 +474,7 @@ print("POST request body:", r_post.request.body)
 print("Form data nhận được:", r_post.json()["form"])
 # Output: {'ID': '123', 'name': 'Joseph'}
 ```
-# 6. Danh sách HTML Attributes
+## 6. Danh sách HTML Attributes
 
 ## 📑 Mục lục
 
@@ -488,7 +488,7 @@ print("Form data nhận được:", r_post.json()["form"])
 
 ---
 
-## 6.1. Global Attributes (dùng được cho mọi thẻ)
+### 6.1. Global Attributes (dùng được cho mọi thẻ)
 
 Nhóm attribute có thể gắn vào **bất kỳ thẻ HTML nào**, không phân biệt loại thẻ.
 
@@ -523,7 +523,7 @@ Nhóm attribute có thể gắn vào **bất kỳ thẻ HTML nào**, không phâ
 
 ---
 
-## 6.2. Attributes cho Form & Input
+### 6.2. Attributes cho Form & Input
 
 | Attribute | Ý nghĩa |
 |---|---|
@@ -552,7 +552,7 @@ Nhóm attribute có thể gắn vào **bất kỳ thẻ HTML nào**, không phâ
 
 ---
 
-## 6.3. Attributes cho Link & Media
+### 6.3. Attributes cho Link & Media
 
 | Attribute | Ý nghĩa |
 |---|---|
@@ -581,7 +581,7 @@ Nhóm attribute có thể gắn vào **bất kỳ thẻ HTML nào**, không phâ
 
 ---
 
-## 6.4. Attributes cho Table
+### 6.4. Attributes cho Table
 
 | Attribute | Ý nghĩa |
 |---|---|
@@ -592,7 +592,7 @@ Nhóm attribute có thể gắn vào **bất kỳ thẻ HTML nào**, không phâ
 
 ---
 
-## 6.5. Attributes cho Iframe & Script
+### 6.5. Attributes cho Iframe & Script
 
 | Attribute | Ý nghĩa |
 |---|---|
@@ -605,7 +605,7 @@ Nhóm attribute có thể gắn vào **bất kỳ thẻ HTML nào**, không phâ
 
 ---
 
-## 6.6. Event Handler Attributes (on*)
+### 6.6. Event Handler Attributes (on*)
 
 Nhóm attribute gắn hành vi JavaScript trực tiếp vào thẻ HTML khi có sự kiện xảy ra (không khuyến khích dùng nhiều vì lẫn logic vào HTML, nhưng vẫn phổ biến trong ví dụ cơ bản).
 
@@ -620,7 +620,7 @@ Nhóm attribute gắn hành vi JavaScript trực tiếp vào thẻ HTML khi có 
 
 ---
 
-## 6.7. Attributes cũ / không khuyến khích dùng (Deprecated)
+### 6.7. Attributes cũ / không khuyến khích dùng (Deprecated)
 
 Các attribute này vẫn có thể hoạt động ở một số trình duyệt nhưng đã bị thay thế bằng CSS — **không nên dùng** trong dự án mới.
 
