@@ -46,7 +46,8 @@ from bs4 import BeautifulSoup
 import requests
 URL = "http://www.example.com"
 page = requests.get(URL)
-soup = BeautifulSoup(page.content, "html.parser")
+soup = BeautifulSoup(page.content, "html.parser") # thư viện python
+hoặc # soup = BeautifulSoup(page.content, "html5lib") # theo chuẩn html trình duyệt, chậm nhất
 ```
 ## 2. Selenium:
 > Selenium is a tool used for controlling web browsers through programs and automating browser tasks.
