@@ -26,7 +26,24 @@
   - [5.2. POST Request với Data Body](#52-post-request-với-data-body)
 
 ---
+**Web Scraping with Python**
+BeautifulSoup:
+> used for web scraping purposes to pull the data out of HTML and XML files. It creates a parse tree from page source code that can be used to extract data in a hierarchical and more readable manner.
+```python
+from bs4 import BeautifulSoup
+import requests
+URL = "http://www.example.com"
+page = requests.get(URL)
+soup = BeautifulSoup(page.content, "html.parser")
+```
 
+Selenium:
+> Selenium is a tool used for controlling web browsers through programs and automating browser tasks.
+```python
+from selenium import webdriver
+driver = webdriver.Firefox()
+driver.get("http://www.example.com")
+```
 ## 1. Cấu trúc cơ bản của HTML
 
 ### 1.1. HTML display
