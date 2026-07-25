@@ -109,6 +109,69 @@ Thu thập dữ liệu do người dùng nhập (đăng nhập, đăng ký, tìm
 
 > 💡 **Thẻ bọc chung (Generic Container):**  
 > Ngoài các nhóm trên, không thể không nhắc tới `<div>` — đây là thẻ khối (Block-level) phổ biến nhất dùng làm hộp chứa để gom nhóm các phần tử và dựng bố cục trang bằng CSS/JS.
+---
+# 🍲 Các Object trong BeautifulSoup
+
+## 📑 Mục lục
+
+- [1. Các loại Object chính](#1-các-loại-object-chính)
+- [2. Thuộc tính (attributes) quan trọng của Tag Object](#2-thuộc-tính-attributes-quan-trọng-của-tag-object)
+- [3. Phương thức (methods) tìm kiếm phổ biến](#3-phương-thức-methods-tìm-kiếm-phổ-biến)
+
+---
+
+## 1. Các loại Object chính
+
+- **`BeautifulSoup`** — object gốc, đại diện cho toàn bộ document HTML/XML sau khi parse. Là điểm bắt đầu để tìm kiếm mọi thẻ khác.
+
+  ```python
+  soup = BeautifulSoup(html_doc, 'html.parser')
+  ```
+
+- **`Tag`** — đại diện cho 1 thẻ HTML (ví dụ thẻ `div`, `a`, `p`). Đây là object dùng nhiều nhất khi trích xuất dữ liệu.
+
+  ```python
+  tag = soup.find('a')   # trả về 1 Tag object
+  ```
+
+- **`NavigableString`** — đại diện cho phần văn bản (text) nằm bên trong 1 thẻ (không phải thẻ, mà là nội dung chữ giữa thẻ mở và thẻ đóng).
+
+  ```python
+  tag.string   # trả về NavigableString
+  ```
+
+- **`Comment`** — kiểu con đặc biệt của `NavigableString`, đại diện cho comment HTML.
+
+---
+
+## 2. Thuộc tính (attributes) quan trọng của Tag Object
+
+| Thuộc tính | Ý nghĩa |
+|---|---|
+| `.name` | Tên thẻ (ví dụ: `a`, `div`) |
+| `.attrs` | Dictionary chứa toàn bộ thuộc tính của thẻ (ví dụ: `href`, `class`) |
+| `.string` | Chuỗi text bên trong thẻ (nếu thẻ chỉ có 1 nội dung text duy nhất) |
+| `.text` / `.get_text()` | Lấy toàn bộ text bên trong thẻ, kể cả các thẻ con lồng nhau |
+| `.contents` | List các phần tử con, gồm cả Tag và NavigableString |
+| `.children` | Iterator duyệt qua các phần tử con (tương tự `.contents` nhưng không tạo list) |
+| `.descendants` | Iterator duyệt qua toàn bộ phần tử con cháu (đệ quy nhiều cấp) |
+| `.parent` | Thẻ cha trực tiếp |
+| `.next_sibling` / `.previous_sibling` | Thẻ/text liền kề cùng cấp (sau/trước) |
+
+---
+
+## 3. Phương thức (methods) tìm kiếm phổ biến
+
+| Phương thức | Ý nghĩa |
+|---|---|
+| `.find(name, attrs, ...)` | Tìm thẻ đầu tiên khớp điều kiện |
+| `.find_all(name, attrs, ...)` | Tìm tất cả thẻ khớp điều kiện, trả về list các Tag |
+| `.select(css_selector)` | Tìm theo cú pháp CSS selector |
+| `.get('href')` | Lấy giá trị 1 thuộc tính cụ thể của thẻ (tương đương `tag['href']`) |
+
+---
+
+> 🔑 **Tóm gọn:** `BeautifulSoup` = cả document → chứa nhiều `Tag` → mỗi `Tag` có thể chứa `Tag` con khác hoặc `NavigableString` (text thuần) → dùng `.find()` / `.find_all()` / `.select()` để duyệt tìm đúng `Tag` cần lấy dữ liệu.
 
 ---
 # 🐍 Hướng Dẫn Cào Dữ Liệu Web Cơ Bản Với Python
