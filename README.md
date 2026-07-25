@@ -25,13 +25,13 @@
   - [5.1. GET Request với URL Parameters](#51-get-request-với-url-parameters)
   - [5.2. POST Request với Data Body](#52-post-request-với-data-body)
 - [6. Danh sách HTML Attributes](#6-danh-sách-html-attributes)
--   [6.1. Global Attributes (dùng được cho mọi thẻ)](#1-global-attributes-dùng-được-cho-mọi-thẻ)
--   [6.2. Attributes cho Form & Input](#2-attributes-cho-form--input)
--   [6.3. Attributes cho Link & Media](#3-attributes-cho-link--media)
--   [6.4. Attributes cho Table](#4-attributes-cho-table)
--   [6.5. Attributes cho Iframe & Script](#5-attributes-cho-iframe--script)
--   [6.6. Event Handler Attributes (on*)](#6-event-handler-attributes-on)
--   [6.7. Attributes cũ / không khuyến khích dùng (Deprecated)](#7-attributes-cũ--không-khuyến-khích-dùng-deprecated)
+  - [6.1. Global Attributes (dùng được cho mọi thẻ)](#1-global-attributes-dùng-được-cho-mọi-thẻ)
+  - [6.2. Attributes cho Form & Input](#2-attributes-cho-form--input)
+  - [6.3. Attributes cho Link & Media](#3-attributes-cho-link--media)
+  - [6.4. Attributes cho Table](#4-attributes-cho-table)
+  - [6.5. Attributes cho Iframe & Script](#5-attributes-cho-iframe--script)
+  - [6.6. Event Handler Attributes (on*)](#6-event-handler-attributes-on)
+  - [6.7. Attributes cũ / không khuyến khích dùng (Deprecated)](#7-attributes-cũ--không-khuyến-khích-dùng-deprecated)
 
 ---
 ---
