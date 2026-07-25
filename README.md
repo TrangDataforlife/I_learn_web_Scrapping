@@ -24,14 +24,14 @@
 - [5. Xử lý HTTP Requests: GET vs POST](#5-xử-lý-http-requests-get-vs-post)
   - [5.1. GET Request với URL Parameters](#51-get-request-với-url-parameters)
   - [5.2. POST Request với Data Body](#52-post-request-với-data-body)
-- [6. Danh sách HTML Attributes](#6-danh-sach-html-attributes)
--   [1. Global Attributes (dùng được cho mọi thẻ)](#1-global-attributes-dùng-được-cho-mọi-thẻ)
--   [2. Attributes cho Form & Input](#2-attributes-cho-form--input)
--   [3. Attributes cho Link & Media](#3-attributes-cho-link--media)
--   [4. Attributes cho Table](#4-attributes-cho-table)
--   [5. Attributes cho Iframe & Script](#5-attributes-cho-iframe--script)
--   [6. Event Handler Attributes (on*)](#6-event-handler-attributes-on)
--   [7. Attributes cũ / không khuyến khích dùng (Deprecated)](#7-attributes-cũ--không-khuyến-khích-dùng-deprecated)
+- [6. Danh sách HTML Attributes](#6-danh-sách-html-attributes)
+-   [6.1. Global Attributes (dùng được cho mọi thẻ)](#1-global-attributes-dùng-được-cho-mọi-thẻ)
+-   [6.2. Attributes cho Form & Input](#2-attributes-cho-form--input)
+-   [6.3. Attributes cho Link & Media](#3-attributes-cho-link--media)
+-   [6.4. Attributes cho Table](#4-attributes-cho-table)
+-   [6.5. Attributes cho Iframe & Script](#5-attributes-cho-iframe--script)
+-   [6.6. Event Handler Attributes (on*)](#6-event-handler-attributes-on)
+-   [6.7. Attributes cũ / không khuyến khích dùng (Deprecated)](#7-attributes-cũ--không-khuyến-khích-dùng-deprecated)
 
 ---
 ---
@@ -478,17 +478,17 @@ print("Form data nhận được:", r_post.json()["form"])
 
 ## 📑 Mục lục
 
-- [1. Global Attributes (dùng được cho mọi thẻ)](#1-global-attributes-dùng-được-cho-mọi-thẻ)
-- [2. Attributes cho Form & Input](#2-attributes-cho-form--input)
-- [3. Attributes cho Link & Media](#3-attributes-cho-link--media)
-- [4. Attributes cho Table](#4-attributes-cho-table)
-- [5. Attributes cho Iframe & Script](#5-attributes-cho-iframe--script)
-- [6. Event Handler Attributes (on*)](#6-event-handler-attributes-on)
-- [7. Attributes cũ / không khuyến khích dùng (Deprecated)](#7-attributes-cũ--không-khuyến-khích-dùng-deprecated)
+- [6.1. Global Attributes (dùng được cho mọi thẻ)](#1-global-attributes-dùng-được-cho-mọi-thẻ)
+- [6.2. Attributes cho Form & Input](#2-attributes-cho-form--input)
+- [6.3. Attributes cho Link & Media](#3-attributes-cho-link--media)
+- [6.4. Attributes cho Table](#4-attributes-cho-table)
+- [6.5. Attributes cho Iframe & Script](#5-attributes-cho-iframe--script)
+- [6.6. Event Handler Attributes (on*)](#6-event-handler-attributes-on)
+- [6.7. Attributes cũ / không khuyến khích dùng (Deprecated)](#7-attributes-cũ--không-khuyến-khích-dùng-deprecated)
 
 ---
 
-## 1. Global Attributes (dùng được cho mọi thẻ)
+## 6.1. Global Attributes (dùng được cho mọi thẻ)
 
 Nhóm attribute có thể gắn vào **bất kỳ thẻ HTML nào**, không phân biệt loại thẻ.
 
@@ -523,7 +523,7 @@ Nhóm attribute có thể gắn vào **bất kỳ thẻ HTML nào**, không phâ
 
 ---
 
-## 2. Attributes cho Form & Input
+## 6.2. Attributes cho Form & Input
 
 | Attribute | Ý nghĩa |
 |---|---|
@@ -552,7 +552,7 @@ Nhóm attribute có thể gắn vào **bất kỳ thẻ HTML nào**, không phâ
 
 ---
 
-## 3. Attributes cho Link & Media
+## 6.3. Attributes cho Link & Media
 
 | Attribute | Ý nghĩa |
 |---|---|
@@ -581,7 +581,7 @@ Nhóm attribute có thể gắn vào **bất kỳ thẻ HTML nào**, không phâ
 
 ---
 
-## 4. Attributes cho Table
+## 6.4. Attributes cho Table
 
 | Attribute | Ý nghĩa |
 |---|---|
@@ -592,7 +592,7 @@ Nhóm attribute có thể gắn vào **bất kỳ thẻ HTML nào**, không phâ
 
 ---
 
-## 5. Attributes cho Iframe & Script
+## 6.5. Attributes cho Iframe & Script
 
 | Attribute | Ý nghĩa |
 |---|---|
@@ -605,7 +605,7 @@ Nhóm attribute có thể gắn vào **bất kỳ thẻ HTML nào**, không phâ
 
 ---
 
-## 6. Event Handler Attributes (on*)
+## 6.6. Event Handler Attributes (on*)
 
 Nhóm attribute gắn hành vi JavaScript trực tiếp vào thẻ HTML khi có sự kiện xảy ra (không khuyến khích dùng nhiều vì lẫn logic vào HTML, nhưng vẫn phổ biến trong ví dụ cơ bản).
 
@@ -620,7 +620,7 @@ Nhóm attribute gắn hành vi JavaScript trực tiếp vào thẻ HTML khi có 
 
 ---
 
-## 7. Attributes cũ / không khuyến khích dùng (Deprecated)
+## 6.7. Attributes cũ / không khuyến khích dùng (Deprecated)
 
 Các attribute này vẫn có thể hoạt động ở một số trình duyệt nhưng đã bị thay thế bằng CSS — **không nên dùng** trong dự án mới.
 
