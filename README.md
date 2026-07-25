@@ -25,13 +25,13 @@
   - [5.1. GET Request với URL Parameters](#51-get-request-với-url-parameters)
   - [5.2. POST Request với Data Body](#52-post-request-với-data-body)
 - [6. Danh sách HTML Attributes](#6-danh-sách-html-attributes)
-  - [6.1. Global Attributes (dùng được cho mọi thẻ)]
-  - [6.2. Attributes cho Form & Input]
-  - [6.3. Attributes cho Link & Media]
-  - [6.4. Attributes cho Table]
-  - [6.5. Attributes cho Iframe & Script]
-  - [6.6. Event Handler Attributes (on*)]
-  - [6.7. Attributes cũ / không khuyến khích dùng (Deprecated)]
+  - [6.1. Global Attributes (dùng được cho mọi thẻ)](#6.1)
+  - [6.2. Attributes cho Form & Input](#6.1)
+  - [6.3. Attributes cho Link & Media](#6.1)
+  - [6.4. Attributes cho Table](#6.1)
+  - [6.5. Attributes cho Iframe & Script](#6.1)
+  - [6.6. Event Handler Attributes (on*)](#6.1)
+  - [6.7. Attributes cũ / không khuyến khích dùng (Deprecated)](#6.1)
 
 ---
 ---
