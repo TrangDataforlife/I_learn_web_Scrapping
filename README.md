@@ -31,6 +31,8 @@
 ## 1. BeautifulSoup:
 > used for web scraping purposes to pull the data out of HTML and XML files. It creates a parse tree from page source code that can be used to extract data in a hierarchical and more readable manner.
 ```python
+!pip install html5lib
+!pip install bs4
 from bs4 import BeautifulSoup
 import requests
 URL = "http://www.example.com"
