@@ -44,6 +44,34 @@ from selenium import webdriver
 driver = webdriver.Firefox()
 driver.get("http://www.example.com")
 ```
+### CSV, JSON, XML file formats
+## 1. .csv (pandas)
+## 2. .json
+```python
+import json
+with open('file.json', 'r') as openfile:
+  json_object = json.load(openfile)
+print(json_object)
+```
+## 3. .xml
+```python
+import pandas as pd
+
+import xml.etree.ElementTree as etree
+tree = etree.parse('file.xml')
+root = tree.getroot()
+columns = ["Name", "Phone", "Birthday"]
+df = pd.DataFrame(columns = columns)
+
+for node in root:
+    name = node.find("name").text
+    phonenumber = node.find("phonenumber").text
+    birthday = node.find("birthday").text
+    df = df.append(pd.Series([name, phonenumber, birthday],
+    index = columns)....., ignore_index = True)
+
+```
+---
 ## 1. Cấu trúc cơ bản của HTML
 
 ### 1.1. HTML display
