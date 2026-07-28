@@ -1,4 +1,4 @@
-# 🧪 I_learn_api — HTML, BeautifulSoup & HTTP Requests với Python
+# 🧪 HTML, BeautifulSoup & HTTP Requests với Python
 
 ## 📑 Mục lục
 
