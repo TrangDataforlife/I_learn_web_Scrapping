@@ -32,6 +32,7 @@
   - [6.5. Attributes cho Iframe & Script](#6.1)
   - [6.6. Event Handler Attributes (on*)](#6.1)
   - [6.7. Attributes cũ / không khuyến khích dùng (Deprecated)](#6.1)
+- [7. Pagination (chia trang), Error handling, If __name__ = __main__](#7-Pagination-chia-trang-error-handling-if-name-main)
 
 ---
 ---
@@ -95,23 +96,6 @@ print(object)
 ```python
 with open (new_file, 'w') as f:
   f.write(f"body")
-```
-## Khối thực thi:
-
-### Khối thực thi chạy thử (ngay tại file gốc, main.py, còn nếu tái sử dụng hàm cào ở một nơi khác thì sẽ ko bị dính code thực thi thử vào, do biến __name__ != __main__ 
-```python
-import time
-
-if __name__ = __main__:
-        while True:
-          find_jops()
-          # every 10 mins find_jobs will run
-          time_wait = 10 
-          time.sleep(time_wait * 60) # smart_sleep() anh Tú xài
-```
-
-```command line
-python main.py
 ```
 ---
 ## 1. Cấu trúc cơ bản của HTML
@@ -665,3 +649,25 @@ Các attribute này vẫn có thể hoạt động ở một số trình duyệt
 | `width`, `height` (trên thẻ layout như `table`, `td`) | CSS `width`, `height` |
 
 > 🔑 **Ghi nhớ:** Nhóm **Global Attributes** (mục 1) là quan trọng nhất cần nhớ trước — vì gắn được vào mọi thẻ. Các nhóm còn lại chỉ áp dụng cho từng nhóm thẻ cụ thể (form, media, table...), nên học theo ngữ cảnh sẽ dễ nhớ hơn là học thuộc lòng toàn bộ danh sách.
+
+## 7. Pagination (chia trang), Error handling, If __name__ = __main__
+
+### 7.1 Pagination:
+
+### 7.2. Khối thực thi chạy thử:
+
+### Khối thực thi chạy thử (ngay tại file gốc, main.py, còn nếu tái sử dụng hàm cào ở một nơi khác thì sẽ ko bị dính code thực thi thử vào, do biến __name__ != __main__ 
+```python
+import time
+
+if __name__ = __main__:
+        while True:
+          find_jops()
+          # every 10 mins find_jobs will run
+          time_wait = 10 
+          time.sleep(time_wait * 60) # smart_sleep() anh Tú xài
+```
+
+```command line
+python main.py
+```
