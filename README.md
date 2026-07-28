@@ -48,6 +48,7 @@ import requests
 URL = "http://www.example.com"
 page = requests.get(URL)
 hoặc  page = requests.get(URL).text # lấy text content của webpage
+hoặc page.json() # trả về dict outcome
 soup = BeautifulSoup(page.content, "html.parser") # thư viện python
 hoặc  soup = BeautifulSoup(page.content, "html5lib") # theo chuẩn html trình duyệt, chậm nhất
 print(soup.prettify())
