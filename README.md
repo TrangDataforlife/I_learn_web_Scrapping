@@ -667,6 +667,7 @@ maxRetries = 3
 for i in range(maxRetries):
   try: 
       response = requests.get(base_url, timeout = (number) )
+      time.sleep(1.0)
       print(response.text)
       print(response.status_code)
       break
@@ -681,11 +682,15 @@ for i in range(maxRetries):
 import time
 
 if __name__ = __main__:
-        while True:
           find_jops()
-          # every 10 mins find_jobs will run
-          time_wait = 10 
-          time.sleep(time_wait * 60) # smart_sleep() anh Tú xài
+          df.to_csv()
+          df.to_excel()
+```
+
+```python
+def smart_sleep(min_s=1.2, max_s=2.8):
+    # nghỉ ngẫu nhiên để “giống người”
+    time.sleep(random.uniform(min_s, max_s))
 ```
 
 ```command line
