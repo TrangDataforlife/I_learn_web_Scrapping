@@ -83,7 +83,18 @@ for node in root:
     birthday = node.find("birthday").text
     df = df.append(pd.Series([name, phonenumber, birthday],
     index = columns)....., ignore_index = True)
-
+```
+## Working with files in python
+### 1. Read
+```python
+with open(current_file, 'r') as openfile:
+  object = openfile.read()
+print(object)
+```
+### 2. Writing 
+```python
+with open (new_file, 'w') as f:
+  f.write(f"body")
 ```
 ## Khối thực thi:
 
