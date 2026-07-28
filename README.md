@@ -32,7 +32,7 @@
   - [6.5. Attributes cho Iframe & Script](#6.1)
   - [6.6. Event Handler Attributes (on*)](#6.1)
   - [6.7. Attributes cũ / không khuyến khích dùng (Deprecated)](#6.1)
-- [7. Pagination (chia trang), Error handling, If __name__ = __main__](#7-Pagination-chia-trang-error-handling-if-name-main)
+- [7. Pagination (chia trang), Error handling, If __name__ = __main__](#7-pagination-chia-trang-error-handling-if-__name__--__main__)
 
 ---
 ---
