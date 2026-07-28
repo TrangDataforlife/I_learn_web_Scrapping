@@ -650,7 +650,7 @@ Các attribute này vẫn có thể hoạt động ở một số trình duyệt
 
 > 🔑 **Ghi nhớ:** Nhóm **Global Attributes** (mục 1) là quan trọng nhất cần nhớ trước — vì gắn được vào mọi thẻ. Các nhóm còn lại chỉ áp dụng cho từng nhóm thẻ cụ thể (form, media, table...), nên học theo ngữ cảnh sẽ dễ nhớ hơn là học thuộc lòng toàn bộ danh sách.
 
-## 7. Pagination (chia trang), Error handling, If __name__ = __main__
+## 7. Pagination (chia trang), Error handling, If __name__ = __main__:
 
 ### 7.1 Pagination:
 
