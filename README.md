@@ -653,10 +653,25 @@ Các attribute này vẫn có thể hoạt động ở một số trình duyệt
 
 ## <a id="section-7"></a>7. Pagination (chia trang), Error handling, If __name__ = __main__
 
-### 7.1 Pagination:
+### 7.1. Pagination:
+url = baseurl + endpoint + ?page=(number)
 
+### 7.2. Error Handling:
+a/ timeout
+```python
+import requests
+from requests.exceptions import Timeout
+baseurl = 'http://..........'
 
-### 7.2. Khối thực thi chạy thử:
+try: 
+    response = requests.get(base_url, timeout = (number) )
+    print(response.text)
+    print(response.status_code)
+except Timeout as to:
+    print("Timeout")
+```
+
+### 7.3. Khối thực thi chạy thử:
 
 ### Khối thực thi chạy thử (ngay tại file gốc, main.py, còn nếu tái sử dụng hàm cào ở một nơi khác thì sẽ ko bị dính code thực thi thử vào, do biến __name__ != __main__ 
 ```python
