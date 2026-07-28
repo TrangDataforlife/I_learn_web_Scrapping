@@ -94,7 +94,7 @@ print(object)
 ```
 ### 2. Writing 
 ```python
-with open (new_file, 'w') as f:
+with open (new_file.csv, 'w') as f:
   f.write(f"body")
 ```
 ---
@@ -653,6 +653,7 @@ Các attribute này vẫn có thể hoạt động ở một số trình duyệt
 ## <a id="section-7"></a>7. Pagination (chia trang), Error handling, If __name__ = __main__
 
 ### 7.1 Pagination:
+
 
 ### 7.2. Khối thực thi chạy thử:
 
