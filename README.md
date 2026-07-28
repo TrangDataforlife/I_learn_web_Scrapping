@@ -43,6 +43,7 @@
 ```python
 !pip install html5lib
 !pip install bs4
+! pip install lxml
 from bs4 import BeautifulSoup
 import requests
 URL = "http://www.example.com"
