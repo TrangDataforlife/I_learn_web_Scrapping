@@ -49,6 +49,7 @@ page = requests.get(URL)
 hoặc  page = requests.get(URL).text # lấy text content của webpage
 soup = BeautifulSoup(page.content, "html.parser") # thư viện python
 hoặc  soup = BeautifulSoup(page.content, "html5lib") # theo chuẩn html trình duyệt, chậm nhất
+print(soup.prettify())
 ```
 ## 2. Selenium:
 > Selenium is a tool used for controlling web browsers through programs and automating browser tasks.
