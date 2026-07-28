@@ -85,10 +85,22 @@ for node in root:
     index = columns)....., ignore_index = True)
 
 ```
-### Khối thực thi chạy thử (ngay tại file gốc, còn nếu tái sử dụng hàm cào ở một nơi khác thì sẽ ko bị dính code thực thi thử vào, do biến __name__ != __main__ 
+## Khối thực thi:
+
+### Khối thực thi chạy thử (ngay tại file gốc, main.py, còn nếu tái sử dụng hàm cào ở một nơi khác thì sẽ ko bị dính code thực thi thử vào, do biến __name__ != __main__ 
 ```python
+import time
+
 if __name__ = __main__:
-        body execution web scrapper
+        while True:
+          find_jops()
+          # every 10 mins find_jobs will run
+          time_wait = 10 
+          time.sleep(time_wait * 60) # smart_sleep() anh Tú xài
+```
+
+```command line
+python main.py
 ```
 ---
 ## 1. Cấu trúc cơ bản của HTML
