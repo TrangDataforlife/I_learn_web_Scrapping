@@ -662,13 +662,16 @@ a/ timeout
 import requests
 from requests.exceptions import Timeout
 baseurl = 'http://..........'
+maxRetries = 3
 
-try: 
-    response = requests.get(base_url, timeout = (number) )
-    print(response.text)
-    print(response.status_code)
-except Timeout as to:
-    print("Timeout")
+for i in range(maxRetries):
+  try: 
+      response = requests.get(base_url, timeout = (number) )
+      print(response.text)
+      print(response.status_code)
+      break
+  except Timeout as to:
+      print("Timeout")
 ```
 
 ### 7.3. Khối thực thi chạy thử:
