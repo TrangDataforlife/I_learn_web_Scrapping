@@ -100,6 +100,11 @@ print(object)
 ```
 ### 2. Writing 
 ```python
+with open('new_file.csv', 'wb') as f:
+  f.write(body)
+```
+
+```python
 import pandas as pd
 # Chuyển thành DataFrame và lưu CSV trong 1 dòng
 pd.DataFrame(data).to_csv('scrape.csv', index=False, encoding='utf-8-sig')
