@@ -100,8 +100,19 @@ print(object)
 ```
 ### 2. Writing 
 ```python
-with open (new_file.csv, 'w') as f:
-  f.write(f"body")
+import pandas as pd
+# Chuyển thành DataFrame và lưu CSV trong 1 dòng
+pd.DataFrame(data).to_csv('scrape.csv', index=False, encoding='utf-8-sig')
+```
+
+```python
+import csv
+
+# Ghi dữ liệu vào CSV
+with open('scrape.csv', 'w', newline='', encoding='utf-8-sig') as f:
+    writer = csv.writer(f)
+    writer.writerow(['col1', 'col2', 'col3']) # Header
+    writer.writerow([var1, var2, var3])       # Row
 ```
 ---
 ## 1. Cấu trúc cơ bản của HTML
