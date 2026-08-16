@@ -130,6 +130,7 @@ with open('scrape.csv', 'w', newline='', encoding='utf-8-sig') as f:
   <head>
     <meta charset="UTF-8"> --bộ mã unicode
     <meta name="keywords" content=" HTML, CSS, JS ">
+    <meta name="author" content="Tim Berners-Lee">
     <title>Tiêu đề trang</title>
   </head>
   <body>
