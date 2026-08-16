@@ -128,7 +128,7 @@ with open('scrape.csv', 'w', newline='', encoding='utf-8-sig') as f:
 <!DOCTYPE html>
 <html lang="vi">
   <head>
-    <meta charset="UTF-8"> #bộ mã unicode
+    <meta charset="UTF-8"> --bộ mã unicode
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tiêu đề trang</title>
   </head>
